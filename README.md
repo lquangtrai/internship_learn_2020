@@ -33,6 +33,11 @@ Some essential properties of Java :
 * Ctrl + q // View the doc about the function
 * Ctrl + Alt + L // format code
 
+### Install third party library : the spring libraries
+Class path: consist of one or more directories that contain all the Java files associated with our project.
+
+Now, I add JAR(Java Archive) files to class path in intellij:
+Using Gradle or Maven to manage the dependence
 
 
 ### Import for write code
@@ -61,3 +66,7 @@ Therefore, the approach here is using the popular of java is the spring framewor
 
 
 ## PostgreSQL
+
+
+
+### React
