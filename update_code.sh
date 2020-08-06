@@ -1,7 +1,15 @@
 #!/usr/bin/env bash
+myName = "hunterkilltree"
+echo Hello, $myName !
+echo "Enter your commit: "
+read myCommit
+
+if ["$myCommit" -ne null]
+then
+	myCommit = "no ideal"
+fi
 git add .
 
-DATE = $(date)
-git commit -m "changes made on $DATE"
+git commit -m "$myCommit"
 
 git push origin master
