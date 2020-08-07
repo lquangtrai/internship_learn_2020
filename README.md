@@ -79,9 +79,26 @@ Output the message:
 The browser read and display Content(HTML), Style(CSS), Interactivity(JavaScript) by the JavaScript Engine ( a program or interpreter ) built into the browser that executes JavaScript code.
   * When a browser reads and acts on JavaScript program => running or executing program.
   * Add the JavaScript to HTML by ```<script src="myScript.js"> ... <\script>``` or insert directly the code inside but I can not do both.
-  
 
+### Comparison Operators
+| **Syntax** | **Description**            |
+|------------|----------------------------|
+|===         | equal value and equal type |
+|==          | equal to (not care the same type or not )|
 
+### Declare Variable
+In JavaScript, the Variable can be defined with **var** keyword but **let** and **const** help our code less error prone.
+
+Notes :
+```
+// accepted var allows override data
+var myValue = 3;
+var myValue = 5;
+
+//Cause  Uncaught SyntaxError
+let myValue2 = 3;
+let myValue2 = 5;
+```
 * Resource:
   * https://developer.mozilla.org/en-US/docs/Web/JavaScript
 
@@ -91,5 +108,17 @@ The browser read and display Content(HTML), Style(CSS), Interactivity(JavaScript
 Why we need React? the library for building user interfaces. The benefit of react is providing the efficient and flexible way of building, organizing and
 maintaining the UI code. In addition, the react provide the way to break up the code into reusable pieces of code called **components**. The other big benefit is that React keeps application's data or at state and the UI in-sync and can efficiently update you UI when data changes.
 
+
+Create a new React application:
+* npx create-react-app my-app
+* cd my-app
+* npm start // to start the web server
+
+React = HTML + CSS + JavaScript + DOM + Nodejs
+
+
+
 * Resource :
   * https://reactjs.org/docs/thinking-in-react.html (Think in React)
+
+### Nodejs latest 10 version
