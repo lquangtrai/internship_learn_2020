@@ -68,5 +68,28 @@ Therefore, the approach here is using the popular of java is the spring framewor
 ## PostgreSQL
 
 
+### JavaScript Basic
+Example of JavaScript is on the web where it is used to create everything from engaging photo, and video galleries,.... games , ., applications
+
+Output the message:
+  * alert()
+  * console.log()
+  * document.write()
+
+The browser read and display Content(HTML), Style(CSS), Interactivity(JavaScript) by the JavaScript Engine ( a program or interpreter ) built into the browser that executes JavaScript code.
+  * When a browser reads and acts on JavaScript program => running or executing program.
+  * Add the JavaScript to HTML by ```<script src="myScript.js"> ... <\script>``` or insert directly the code inside but I can not do both.
+  
+
+
+* Resource:
+  * https://developer.mozilla.org/en-US/docs/Web/JavaScript
+
+
 
 ### React
+Why we need React? the library for building user interfaces. The benefit of react is providing the efficient and flexible way of building, organizing and
+maintaining the UI code. In addition, the react provide the way to break up the code into reusable pieces of code called **components**. The other big benefit is that React keeps application's data or at state and the UI in-sync and can efficiently update you UI when data changes.
+
+* Resource :
+  * https://reactjs.org/docs/thinking-in-react.html (Think in React)
