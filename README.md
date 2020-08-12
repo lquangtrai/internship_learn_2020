@@ -76,6 +76,9 @@ Output the message:
   * console.log()
   * document.write()
 
+Capture Input message:
+  * prompt();
+
 The browser read and display Content(HTML), Style(CSS), Interactivity(JavaScript) by the JavaScript Engine ( a program or interpreter ) built into the browser that executes JavaScript code.
   * When a browser reads and acts on JavaScript program => running or executing program.
   * Add the JavaScript to HTML by ```<script src="myScript.js"> ... <\script>``` or insert directly the code inside but I can not do both.
@@ -102,9 +105,79 @@ let myValue2 = 5;
 * Resource:
   * https://developer.mozilla.org/en-US/docs/Web/JavaScript
 
+### Function in JavaScript
+Function expressions: an anonymous function
+```
+const getRandomNumer = function(upper) {
+  const randomNumber = Math.floor(Math.random() * upper ) + 1;
+  return randomNumber;
+};
+```
+
+Function declarations: **hoisting** the JavaScript engine moves function declarations to the top of their
+scope before code execution
+```
+function getRandomNumer(upper) {
+      const randomNumber = Math.floor(Math.random() * upper ) + 1;
+      return randomNumber;
+}
+```
+
+Function Using Arrow Syntax: similar to Function expressions. Notes that this is the newer syntax and it has the same meaning as the Function expressions. The **Function expressions** is still widely used but **Function with Arrow Syntax** is useful to reduce the line of code in callBack function.
+```
+const getRandomNumer = (upper) => {
+  const randomNumber = Math.floor(Math.random() * upper ) + 1;
+  return randomNumber;
+}
+```
+
+```
+const sayHi = () => "Hi!";
+```
+Equivalent to
+```
+const sayHi = function() {
+  return "Hi!";
+}
+```
+
+Default Function Parameters to prevent the error when missing value.
+```
+function sayHi (friend = 'Student') {
+  return `Good Morning, ${friend}`;
+}
+```
+
+isNaN(value) : check the value inside is a number or not.
+```
+function getRandomNumer(upper) {
+  if ( isNaN(upper) ) {
+    throw Error('This is not a number')
+  }    
+  const randomNumber = Math.floor(Math.random() * upper ) + 1;
+  return randomNumber;
+}
+```
+
+JavaScript Arrays
+
+
+JavaScript Object
+
+JavaScript Numbers
+
+
+
+
+* Resource :
+  * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions
+
+
+
 
 
 ### React
+#### Reactjs
 Why we need React? the library for building user interfaces. The benefit of react is providing the efficient and flexible way of building, organizing and
 maintaining the UI code. In addition, the react provide the way to break up the code into reusable pieces of code called **components**. The other big benefit is that React keeps application's data or at state and the UI in-sync and can efficiently update you UI when data changes.
 
@@ -115,6 +188,16 @@ Create a new React application:
 * npm start // to start the web server
 
 React = HTML + CSS + JavaScript + DOM + Nodejs
+
+
+#### React Native
+
+1. Install create-react-native-app
+* npm install -g create-react-native-app
+2. Create project
+* create-react-native-app NameApp
+3. 
+
 
 
 

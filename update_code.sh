@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
-myName = "hunterkilltree"
-echo Hello, $myName !
+myName="hunterkilltree"
+echo Hello, "${myName}"!
 echo "Enter your commit: "
 read myCommit
 
-if ["$myCommit" -ne null]
+if [ "$myCommit" -ne null]
 then
 	myCommit = "no ideal"
 fi
