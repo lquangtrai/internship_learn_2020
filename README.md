@@ -159,7 +159,37 @@ function getRandomNumer(upper) {
 }
 ```
 
-JavaScript Arrays
+### JavaScript Arrays
+1. Create array :
+```
+const planets = [
+'Mercury',
+'Venus',
+'Earth',
+'Mars'
+];
+```
+or
+```
+const multiVar = [
+true,
+1,
+"stringWord"
+];
+```
+2. Access Element :
+
+3. Add Element to Array :
+* push(Element, Element, Element) // add to the end
+* unshift(Element, Element, Element) // add to the beginning
+
+4. Remove Element from Array :
+* pop() // remove and return the element from the end of an array
+* shift() // remove and return the element from the beginning of an array
+Note : push() and shift() can help to create a Queues, or  
+
+5.
+
 
 
 JavaScript Object
@@ -189,6 +219,21 @@ Create a new React application:
 
 React = HTML + CSS + JavaScript + DOM + Nodejs
 
+Thinking in React: think in component
+Component is the piece of UI that can reuse.
+
+prop : read only or immutable.
+state: dynamic and interactive.
+
+Function vs Class :
+Function : if the component is only receiving input through props and rendering UI.
+Class : state.
+
+bind or not bind:
+https://medium.com/shoutem/react-to-bind-or-not-to-bind-7bf58327e22a
+why we need to bind event handlers
+https://www.freecodecamp.org/news/this-is-why-we-need-to-bind-event-handlers-in-class-components-in-react-f7ea1a6f93eb/#:~:text=When%20we%20bind%20the%20this,scope%20they%20are%20defined%20in.
+
 
 #### React Native
 
@@ -196,7 +241,7 @@ React = HTML + CSS + JavaScript + DOM + Nodejs
 * npm install -g create-react-native-app
 2. Create project
 * create-react-native-app NameApp
-3. 
+3.
 
 
 

@@ -51,14 +51,38 @@ function Player(props) {
   );
 }
 
-function Counter(props) {
-  return (
-     <div className="counter">
-        <button className="counter-action decrement"> - </button>
-        <span className="counter-score"> {props.score} </span>
-        <button className="counter-action increment"> + </button>
-      </div>
-  ); 
+
+class Counter extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      score: 0
+    };
+    this.decreasementScore = this.decreasementScore.bind(this);
+  }
+
+  incrementScore() {
+    this.setState({
+      score: this.state.score + 1
+    });
+
+  }
+
+  decreasementScore() {
+    this.setState({
+      score: this.state.score - 1
+    });
+  }
+
+  render() {
+    return (
+      <div className="counter">
+          <button className="counter-action decrement" onClick={this.decreasementScore}> - </button>
+          <span className="counter-score"> {this.state.score} </span>
+          <button className="counter-action increment" onClick={() => this.incrementScore()}> + </button>
+        </div>
+    ); 
+  }
 } 
 
 function App(props) {
