@@ -234,6 +234,18 @@ https://medium.com/shoutem/react-to-bind-or-not-to-bind-7bf58327e22a
 why we need to bind event handlers
 https://www.freecodecamp.org/news/this-is-why-we-need-to-bind-event-handlers-in-class-components-in-react-f7ea1a6f93eb/#:~:text=When%20we%20bind%20the%20this,scope%20they%20are%20defined%20in.
 
+Update State based on previous State (important)
+if we have multiple setState calls inside of an event handler, react will often **batch**, or bundle the updates together into a single update.
+The state maybe updated **asynchronously**, whenever we need to update the state based on previous state, we should not reply on the previous state for  example this.setState({ score: this.state.score + 1});
+Good way :
+```
+this.setState( prevState => {
+  return {
+    score: prevState.score - 1;
+  };
+});
+```
+
 
 #### React Native
 
