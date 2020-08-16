@@ -246,6 +246,11 @@ this.setState( prevState => {
 });
 ```
 
+There are two type of states when create a React app:
+Application state: Data that is available to the entire applications.
+Component state: State that is specific to a component and not shared outside of the component.
+
+
 
 #### React Native
 
