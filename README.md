@@ -250,6 +250,11 @@ There are two type of states when create a React app:
 Application state: Data that is available to the entire applications.
 Component state: State that is specific to a component and not shared outside of the component.
 
+In React, data naturally flows down the component tree, from the app's top-level component down to the child components, via props.
+This is called "unidirectional data flow".
+* https://reactjs.org/docs/state-and-lifecycle.html#the-data-flows-down
+Lifting state up : when two or more components need access to the same state, we move the stat into their common parent.
+ * https://reactjs.org/docs/lifting-state-up.html
 
 
 #### React Native
