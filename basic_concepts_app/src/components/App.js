@@ -2,7 +2,8 @@ import React from 'react';
 
 import Header from './Header';
 import Player from './Player';
- 
+import AddPlayerForm from './AddPlayerForm';
+
 class App extends React.Component {
   constructor() {
     super();
@@ -37,6 +38,9 @@ class App extends React.Component {
     };
   }
 
+  // player id counter
+  prePlayerId = 4;
+
   handleScoreChange = (index, delta) => {
     this.setState( prevState => ({
         score: prevState.players[index].score += delta
@@ -62,6 +66,20 @@ class App extends React.Component {
     //   };    
     // });
     console.log('index: ' + index, 'delta: ' + delta) ;
+  }
+
+  handleAddPlayer = (name) => {
+    this.setState({
+      players: [
+        // merges the existing objects with the new one.
+        ...this.state.players,
+        {
+          name: name,
+          score: 0,
+          id: this.prePlayerId += 1
+        }
+      ]
+    });
   }
 
   handleRemovePlayer = (id) => {
@@ -92,6 +110,8 @@ class App extends React.Component {
             changeScore={this.handleScoreChange}
           />
         )}
+
+        <AddPlayerForm addPlayer={this.handleAddPlayer}/>
       </div>
     );
   }

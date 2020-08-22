@@ -247,8 +247,15 @@ this.setState( prevState => {
 ```
 
 There are two type of states when create a React app:
+
 Application state: Data that is available to the entire applications.
+
 Component state: State that is specific to a component and not shared outside of the component.
+
+Creating a Controlled Component:
+  * Initialize state for the value of the input
+  * Listen for changes on the input to detect when value is updated
+  * Create an event handler that updates the value state.
 
 In React, data naturally flows down the component tree, from the app's top-level component down to the child components, via props.
 This is called "unidirectional data flow".
