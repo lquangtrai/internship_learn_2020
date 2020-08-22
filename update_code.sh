@@ -4,7 +4,7 @@ echo Hello, "${myName}"!
 echo "Enter your commit: "
 read myCommit
 
-if [ "$myCommit" -ne null]
+if [ -z "$myCommit" ]
 then
 	myCommit = "no ideal"
 fi
