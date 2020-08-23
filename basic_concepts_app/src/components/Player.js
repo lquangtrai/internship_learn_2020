@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Counter from './Counter';
+import Icon from './Icon';
 
 // function Player(props) {
 //   return (
@@ -34,7 +35,8 @@ class Player extends React.PureComponent {
             <div className="player">
               <span className="player-name">
                 <button className="remove-player" onClick={() => removePlayer(id)}>X</button>
-                {name}
+                <Icon isHighScore={this.props.isHighScore} />
+                { name }
               </span>
               <Counter
                 score={score}
