@@ -274,7 +274,12 @@ Example:
 componentDidMount: get called by React as soon as a component is inserted or mounted into the DOM. Also referred to as
 lifecycle hooks because they let hook into, or hook to certain part of a component's lifecycle. It is useful hook for setting up timers **fetching data**, anything when the components need to mount into page.
 
-componentWillUnmount is invoked just before a component instance is destroyed: **prevent Memory Leaks** if we provided a stopwatch in multiple pages or a way for users visibly toggle the stopwatch between a visible and hidden state => for getting clear the interval will cause problem 
+componentWillUnmount is invoked just before a component instance is destroyed: **prevent Memory Leaks** if we provided a stopwatch in multiple pages or a way for users visibly toggle the stopwatch between a visible and hidden state => for getting clear the interval will cause problem
+
+##### Optimize Performance with PureComponent
+In previous practice, each time we modify the score of player then React rerenders every player component on the board.
+That the reason why we use PureComponent to optimize the Performance.
+PureComponent: implment a lifecycle methods behind the scences called  shouldComponentUpdate that runs a shallows comparison of props and state. the lifecycle method automatically checks whether a rerender is required for the component and calls render if it detects changes in state or props.
 
 #### React Native
 
