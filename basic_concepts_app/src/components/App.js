@@ -74,7 +74,9 @@ class App extends React.Component {
   //   this.setState({
   //     players: [
   //       // merges the existing objects with the new one.
-  //       ...this.state.players,
+  //       //...this.state.players,
+  //       // or
+  //       // ...prevState.players,
   //       {
   //         name: name,
   //         score: 0,
@@ -83,7 +85,6 @@ class App extends React.Component {
   //     ]
   //   });
   // }
-
 
   // using concat method
   handleAddPlayer = (name) => {
