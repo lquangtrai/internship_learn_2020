@@ -281,6 +281,17 @@ In previous practice, each time we modify the score of player then React rerende
 That the reason why we use PureComponent to optimize the Performance.
 PureComponent: implment a lifecycle methods behind the scences called  shouldComponentUpdate that runs a shallows comparison of props and state. the lifecycle method automatically checks whether a rerender is required for the component and calls render if it detects changes in state or props.
 
+
+##### Refs and The DOM
+    * https://reactjs.org/docs/refs-and-the-dom.html#refs-and-functional-components
+    * https://reactjs.org/docs/refs-and-the-dom.html
+    * https://reactjs.org/docs/glossary.html#refs
+
+##### Checking in React 
+    * PropTypes : https://reactjs.org/docs/typechecking-with-proptypes.html#proptypes; https://www.npmjs.com/package/prop-types
+    * TypeSCript : https://www.typescriptlang.org/
+    * Flow  : https://flow.org/
+
 #### React Native
 
 1. Install create-react-native-app
