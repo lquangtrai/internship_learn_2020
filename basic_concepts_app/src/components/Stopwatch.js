@@ -22,6 +22,11 @@ class Stopwatch extends React.Component {
     console.log('fdsfsd');
   }
 
+  // add the method that will clear the interval ID once the component gets removed from the DOM.
+  componentWillUnmount() {
+    clearInterval(this.intervalId);
+  }
+
   tick = () => {
     if (this.state.isRunning) {
         const now = Date.now();
