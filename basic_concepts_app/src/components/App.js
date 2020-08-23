@@ -33,7 +33,7 @@ class App extends React.Component {
           id: 5,
           score: 0,
           name: "G"
-        }        
+        }
       ]
     };
   }
@@ -47,12 +47,12 @@ class App extends React.Component {
     }));
 
     // safest approach
-    // build a new objest based on the data from prevState, 
+    // build a new objest based on the data from prevState,
     // which update  a player's score state without mutating this.state
     // this.setState( prevState => {
     //   // New 'players' array - a copy of previous 'players' state
     //   const updatePlayers = { ...prevState.players };
-    //   // A copy of the player object we are targeting 
+    //   // A copy of the player object we are targeting
     //   const updatePlayer = { ...updatePlayers[index] };
 
     //   // Update the target player's score
@@ -63,23 +63,38 @@ class App extends React.Component {
     //   // Update the 'players' state without mutating the original state
     //   return {
     //     players: updatePlayers
-    //   };    
+    //   };
     // });
     console.log('index: ' + index, 'delta: ' + delta) ;
   }
 
+
+  // using Spread Syntax
+  // handleAddPlayer = (name) => {
+  //   this.setState({
+  //     players: [
+  //       // merges the existing objects with the new one.
+  //       ...this.state.players,
+  //       {
+  //         name: name,
+  //         score: 0,
+  //         id: this.prePlayerId += 1
+  //       }
+  //     ]
+  //   });
+  // }
+
+
+  // using concat method
   handleAddPlayer = (name) => {
-    this.setState({
-      players: [
-        // merges the existing objects with the new one.
-        ...this.state.players,
-        {
-          name: name,
-          score: 0,
-          id: this.prePlayerId += 1
-        }
-      ]
-    });
+    let newPlayer = {
+      name,
+      score: 0,
+      id: this.prevPlayerId += 1
+    };
+    this.setState( prevState => ({
+      players: prevState.players.concat(newPlayer)
+    }));
   }
 
   handleRemovePlayer = (id) => {
@@ -94,11 +109,11 @@ class App extends React.Component {
   render() {
     return (
       <div className="scoreboard">
-        <Header 
-          title="Scoreboard" 
+        <Header
+          title="Scoreboard"
           players={this.state.players}
         />
-  
+
         {this.state.players.map( (player, index) =>
           <Player
             name={player.name}
