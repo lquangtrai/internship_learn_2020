@@ -3,33 +3,51 @@ import React from 'react';
 class Stopwatch extends React.Component {
 
   state = {
-    isRunning: false
+    isRunning: false,
+    elapsedTime: 0,
+    previousTime: 0,
   };
 
   handleStopwatch = () => {
-    this.setState({
-      isRunning: !this.state.isRunning
-    });
+    this.setState( prevState => ({
+        isRunning: !this.state.isRunning
+    }));
+    if (!this.state.isRunning) {
+      this.setState({ previousTime: Date.now() });
+    }
+  }
+
+  componentDidMount() {
+    this.intervalID = setInterval(() => this.tick(), 100); // call each 100milisecond
+    console.log('fdsfsd');
+  }
+
+  tick = () => {
+    if (this.state.isRunning) {
+        const now = Date.now();
+        this.setState( prevState => ({
+          previousTime: now,
+          elapsedTime: prevState.elapsedTime + (now - this.state.previousTime)
+      }));
+    }
+  }
+
+  handleReset = () => {
+    this.setState({ elapsedTime: 0});
   }
 
   render() {
-    let button;
-    if (this.state.isRunning) {
-      button = <button>Stop</button>;
-      } else {
-        button = <button>Start</button>;
-    }
-    return (
-      <div className="stopwatch">
-        <h2>Stopwatch</h2>
-        <span className="stopwatch-time">3...</span>
-      // <button onClick={this.handleStopwatch}>
-      //   { this.state.isRunning ? 'Stop' : 'Start' }
-      // </button>
-        { button }
-      <button>Reset</button>
-    </div>
-  );
+      const seconds = Math.floor(this.state.elapsedTime / 1000);
+      return (
+        <div className="stopwatch">
+          <h2>Stopwatch</h2>
+          <span className="stopwatch-time">{ seconds }</span>
+          <button onClick={this.handleStopwatch}>
+            { this.state.isRunning ? 'Stop' : 'Start' }
+          </button>
+          <button onClick={this.handleReset}>Reset</button>
+        </div>
+      );
   }
 }
 

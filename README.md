@@ -263,6 +263,16 @@ This is called "unidirectional data flow".
 Lifting state up : when two or more components need access to the same state, we move the stat into their common parent.
  * https://reactjs.org/docs/lifting-state-up.html
 
+React's build in lifecycle method
+Remind: In react, every component instance follows a cycle: it's **mounted** onto the DOM, it's **update** with changes in data, and its **unmounted** from the DOM.
+
+* Build-in methods that get called at each point in the life cycle
+* Hooks that run code at key times in a component's life cycle
+* Give ability to control what happens when a component mounts, updates and unmounts
+
+Example:
+componentDidMount: get called by React as soon as a component is inserted or mounted into the DOM. Also referred to as
+lifecycle hooks because they let hook into, or hook to certain part of a component's lifecycle. It is useful hook for setting up timers **fetching data**, anything when the components need to mount into page.
 
 #### React Native
 
