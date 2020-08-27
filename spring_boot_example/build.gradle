@@ -1,0 +1,41 @@
+////add pre-defined functionality when using Gradle to build project
+//plugins {
+//    id 'java'
+//}
+//
+////group inversion when creating the project
+//group 'org.example'
+//version '1.0-SNAPSHOT'
+//
+//// allow more locations where Gradle should look for the libraries we list
+//repositories {
+//    mavenCentral() //the largest public dependency repositories
+//}
+//
+//// dependence block
+//dependencies {
+//    testCompile group: 'junit', name: 'junit', version: '4.12'
+//    compile group: 'org.springframework', name: 'spring-webmvc', version: '5.2.8.RELEASE'
+//    // search keyword: spring webmvc maven
+//}
+
+// refers to a set of functionality that extends the core functionality of Gradle
+plugins {
+    id 'java'
+    id 'idea'
+    id 'org.springframework.boot' version '1.4.3.RELEASE'
+}
+
+group 'com.hunterkilltree'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'org.springframework.boot:spring-boot-starter-web'
+
+}

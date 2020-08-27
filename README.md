@@ -54,8 +54,27 @@ Basic web app operation: Client request to server through the web browser (proto
 
 Therefore, the approach here is using the popular of java is the spring framework.
 
+###### Setup Gradle
+add dependency: https://mvnrepository.com/artifact/org.springframework/spring-webmvc
 
 
+
+A component is a set of related functionality.
+
+**Beans**: allows any Java Object to be created and used in what's called the servlet container.
+**Servlet Container**: the container of your entire running applications on the web server.
+
+**Context component**
+### Annotation
+@Configuration : for any class that contains application configuration code
+
+@Controller : for any controller classes, which will handle URI requests
+
+@ComponentScan :  used on a configuration class for telling the Spring Framework to scan for components
+
+**SpEL**: stands for Spring Expression Language
+
+**AOP** : stands for Aspect-Oriented
 
 
 
@@ -287,7 +306,7 @@ PureComponent: implment a lifecycle methods behind the scences called  shouldCom
     * https://reactjs.org/docs/refs-and-the-dom.html
     * https://reactjs.org/docs/glossary.html#refs
 
-##### Checking in React 
+##### Checking in React
     * PropTypes : https://reactjs.org/docs/typechecking-with-proptypes.html#proptypes; https://www.npmjs.com/package/prop-types
     * TypeSCript : https://www.typescriptlang.org/
     * Flow  : https://flow.org/
