@@ -76,7 +76,20 @@ A component is a set of related functionality.
 
 **AOP** : stands for Aspect-Oriented
 
+Example:
 
+Create a Controller to Handle HTTP Requests:
+
+URL: Uniform Resource Locator. URL is address that includes a method for locating a
+method for locating a resource with a protocol like HTTP or FTP and include the host name.
+
+URI: Uniform Resource Identifier which does not have the host name and indicating protocol.
+
+## Using Thymeleaf to Serve HTML
+The process begins with the user making an http request to web server. Based on the request,
+the server knows, from the host name. In the application, a dispatcher servlet receives the request and URI is examined. From the URI, the dispatcher servlet determines which controller, and which
+of its methods is mapped to the URI requested by using the **RequestMapping** Annotation. As a result, the mapped controller methods is called which will perform any desired actions and gather data to be used in putting together a response to the original HTTP request. That data will be feed to what's called a Spring View Resolver. => String will put to the proper Thymeleaf template(because we use Thymeleaf, jam the data into the proper place holders), and produce a final HTML product that will handed back to the dispatchers servlet. Then, the dispatcher servlet hands it back to the web server.
+**Need image to show flow**
 
 
 
