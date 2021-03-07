@@ -101,7 +101,17 @@ of its methods is mapped to the URI requested by using the **RequestMapping** An
 
 
 ### JavaScript Basic
-Example of JavaScript is on the web where it is used to create everything from engaging photo, and video galleries,.... games , ., applications
+
+JavaScript is a high-level, object-oriented, **multi-paradigm** programming language.
+
+* high-level: don't have to worry about complex stuff like memory management.
+* object-oriented: based on objects
+* multi-paradigm: flexible so we can use different styles of programming such as imperative, declarative (different styles then different way of structuring code).
+
+
+
+Example application of JavaScript is on the web where it is used to create everything from engaging photo, and video galleries,.... games , ., applications.
+
 
 Output the message:
   * alert()
@@ -330,9 +340,28 @@ PureComponent: implment a lifecycle methods behind the scences called  shouldCom
 * npm install -g create-react-native-app
 2. Create project
 * create-react-native-app NameApp
-3.
+3. Start the sample prject
+* cd NameApp
+* npm start
+4. Start Emulator on android phone
+* npm run android
+5. Write a Test with Jest
+* npm test
 
+Note:
+6. npm run eject (permanent action only for custom configuration)
+7. Install react-native globally
+* npm install -g react-native-cli
+8. Now from 7 Use command
+* react-native init appName --version 1.0
+From this command, we have android folder where we can use android studio to open
+and we can devloy it as normal
 
+Create React Native App
+* Preview your app on a physical device while you build it
+* One build tool
+* No lock-in
+* 'Eject' at any time to create your own build Setup
 
 
 * Resource :
