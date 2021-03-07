@@ -245,7 +245,89 @@ JavaScript Numbers
   * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions
 
 
+### JavaScript interview question
+#### Problem 1:
+Write a class, ```EventEmitter``` that has three methods: ```on```, ```emit```, and ```removeListener```.
 
+* ```on("eventName", callbackFn)``` - a function that takes an ``eventName`` and a ``callbackFn``, should save the ``callbackFn`` to be called when the event with `eventName` is emitted.
+
+* `emit("eventName", data)` - a function that takes an `eventName` and data object, should call the `callbackFns` associated with that event and pass them the data object.
+
+* `removeListener("eventName", callbackFn)` - a function that takes `eventName` and `callbackFn`, should remove that `callbackFn` from the event.
+
+* For example:
+
+```
+let superbowl = new EventEmitter()
+
+const cheer = function (eventData) {
+  console.log('RAAAAAHHHH!!!! Go ' + eventData.scoringTeam)
+}
+
+const jeer = function (eventData) {
+  console.log('BOOOOOO ' + eventData.scoringTeam)
+}
+
+superbowl.on('touchdown', cheer)
+superbowl.on('touchdown', jeer)
+
+superbowl.emit('touchdown', { scoringTeam: 'Patriots' }) // Both cheer and jeer should have been called with data
+
+superbowl.removeListener('touchdown', jeer)
+
+superbowl.emit('touchdown', { scoringTeam: 'Seahawks' }); // Only cheer should have been called
+
+```
+
+***Solution***:
+Use ES6 classes for the class `EventEmitter` and initialize it with an object `event` in order to track events.
+
+```
+class EventEmitter {
+  constructor () {
+    this.events = {}
+  }
+}
+```
+
+***Emit***
+```
+emit (eventName, eventData) {
+   if (!this.events[eventName]) return
+   this.events[eventName].forEach(fn => fn(eventData))  
+ }
+ ```
+ This solution take advantage of **closure** in javascript. **Closure** is very important during the javascript interview. "A closure is essentially when a function has references to its surrounding state or its lexical environment. You can also think of this as a closure allowing you access to an outer function’s scope from inside an inner function. Using global variables is a great simple example of closure. "
+
+ Here’s another great example of using closure to track how many times a function was called.
+ ```
+ function tracker (fn) {
+  let numTimesCalled = 0
+  return function () {
+    numTimesCalled++
+    console.log('I was called', numTimesCalled)
+    return fn()
+  }
+}
+
+function hello () {
+  console.log('hello')
+}
+
+const trackedHello = tracker(hello)
+```
+The inner function returned in tracker closes over the variable numTimesCalled and maintains a reference to it for the life of the trackedHello function.
+
+**RemoveListener**
+```
+removeListener (eventName, callbackFn) {
+  const idx = this.events[eventName].indexOf(callbackFn)
+  if (idx === -1) return
+  this.events[eventName].splice(idx, 1)
+}
+```
+
+* Source : https://dev.to/coderbyte/a-javascript-interview-question-asked-at-google-19f1
 
 
 ### React
